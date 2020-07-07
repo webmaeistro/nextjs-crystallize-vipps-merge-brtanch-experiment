@@ -14,8 +14,8 @@ function getEmailHtml(loginLink) {
     <mj-body>
       <mj-section>
         <mj-column>
-          <mj-text>Welcome! Simply follow the link below to login.</mj-text>
-          <mj-button href="${loginLink}" align="center">Click here to login</mj-button>
+          <mj-text> Velkommen til Ørn forlag login. Følg linken under, den er gyldig i 1 time</mj-text>
+          <mj-button href="${loginLink}" align="center">Klikk her for å logge inn</mj-button>
           <mj-text>${loginLink}</mj-text>
         </mj-column>
       </mj-section>
@@ -58,18 +58,18 @@ export default async (req, res) => {
     sgMail.setApiKey(sendGridApiKey);
     await sgMail.send({
       to: email,
-      from: 'example@crystallize.com',
-      subject: 'Magic Link',
+      from: 'webmaster@ornforlag.no',
+      subject: 'Ornforlag.no magisk link',
       html
     });
   } else {
     return res.json({
-      message: 'Email sent! The verification link will expire in 1 hour',
+      message: 'Epost sendt! Denne linken er gyldig i 1 time fra og med nå',
       magicLink
     });
   }
 
   return res.json({
-    message: 'Email sent! The verification link will expire in 1 hour'
+    message: 'Epost sendt! Denne linken er gyldig i 1 time fra og med nå'
   });
 };

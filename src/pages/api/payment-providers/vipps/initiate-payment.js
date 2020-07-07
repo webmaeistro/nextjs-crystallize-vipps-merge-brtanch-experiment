@@ -10,7 +10,7 @@ function getTotalAmount(acc, lineItem) {
 
 function orderToVippsBody({ basket, orderId, host, multilingualUrlPrefix }) {
   const totalCartAmount = basket.lineItems.reduce(getTotalAmount, 0);
-  const shippingCost = 0;
+  const shippingCost = 99;
 
   return {
     merchantInfo: {
@@ -36,7 +36,7 @@ function orderToVippsBody({ basket, orderId, host, multilingualUrlPrefix }) {
     transaction: {
       orderId,
       amount: totalCartAmount,
-      transactionText: 'Crystallize NextJS boilerplate test transaction'
+      transactionText: 'Ørn forlag netthandel transaksjon fra ornforlag.no'
     }
   };
 }

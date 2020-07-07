@@ -8,12 +8,12 @@ export default function VippsWrapper({
   currency,
   onSuccess
 }) {
-  const [state, setState] = useState('loading');
+  const [state, setState] = useState('laster');
   const locale = useLocale();
 
   useEffect(() => {
     async function load() {
-      setState('loading');
+      setState('laster..');
 
       const lineItems = items.map((item) => ({
         name: item.name,
