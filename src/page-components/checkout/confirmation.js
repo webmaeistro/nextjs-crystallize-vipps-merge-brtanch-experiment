@@ -47,19 +47,19 @@ export default function Confirmation({ order: orderData }) {
     <Layout title="Order Summary">
       <Outer>
         <CustomHeader>
-          <H1>Order Summary</H1>
+          <H1>Ordre bekreftelse</H1>
           <p>
-            Your order has been confirmed.{' '}
+            Din bestilling er registert.{' '}
             {email && (
               <>
-                A copy of your order has been sent to <strong>{email}</strong>.
+                En kopi av bestillingen er sendt til <strong>{email}</strong>.
               </>
             )}
           </p>
           <Line />
           <BillingDetails order={order} />
           <Line />
-          <H3>Order Items</H3>
+          <H3>Bok bestillings liste</H3>
           <OrderItems items={items} />
         </CustomHeader>
       </Outer>

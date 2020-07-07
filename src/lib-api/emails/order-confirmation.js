@@ -10,9 +10,9 @@ export default async function sendOrderConfirmation(orderId) {
     const response = await callOrdersApi({
       query: QUERY_ORDER_BY_ID,
       variables: {
-        id: orderId,
+        id: orderId
       },
-      operationName: 'getOrder',
+      operationName: 'getOrder'
     });
     const order = response.orders.get;
     const { email } = order.customer.addresses[0];
@@ -28,20 +28,20 @@ export default async function sendOrderConfirmation(orderId) {
         <mj-section>
           <mj-column>
             <mj-text>
-              <h1>Order Summary</h1>
-              <p>Thanks for your order! This email contains a copy of your order for your reference.</p>
+              <h1>Ordre bekreftelse</h1>
+              <p>Takk for din ordre, vi har sendt en kopi til din epost.</p>
               <p>
-                Order Number: <strong>#${order.id}</strong>
+                Ordre Nr.: <strong>#${order.id}</strong>
               </p>
               <p>
-                First name: <strong>${order.customer.firstName}</strong><br />
-                Last name: <strong>${order.customer.lastName}</strong><br />
-                Email address: <strong>${email}</strong>
-              </p>
+                Fornavn: <strong>${order.customer.firstName}</strong><br />
+                Etternavn: <strong>${order.customer.lastName}</strong><br />
+                Epost: <strong>${email}</strong>
+               </p>
               <p>
                 Total: <strong>${formatCurrency({
                   amount: order.total.net,
-                  currency: order.total.currency,
+                  currency: order.total.currency
                 })}</strong>
               </p>
             </mj-text>
@@ -59,7 +59,7 @@ export default async function sendOrderConfirmation(orderId) {
                   <td style="padding: 0 15px;">${item.quantity}</td>
                   <td style="padding: 0 0 0 15px;">${formatCurrency({
                     amount: item.price.net * item.quantity,
-                    currency: item.price.currency,
+                    currency: item.price.currency
                   })}</td>
                 </tr>`
               )}
@@ -75,9 +75,9 @@ export default async function sendOrderConfirmation(orderId) {
       sgMail.setApiKey(SENDGRID_API_KEY);
       await sgMail.send({
         to: email,
-        from: 'example@crystallize.com',
-        subject: 'Order Summary',
-        html,
+        from: 'webmaster@ornforlag.no',
+        subject: 'Ordre kvitering fra Ørn forlag',
+        html
       });
     }
   } catch (error) {

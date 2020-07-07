@@ -28,18 +28,18 @@ const BillingDetails = ({ order }) => {
   return (
     <Outer>
       <Inner>
-        <H3>Billing Details</H3>
+        <H3>Kviterings Spesifikasjoner</H3>
         <p>
-          Name:{' '}
+          Navn:{' '}
           <strong>
             {order.customer.firstName} {order.customer.lastName}
           </strong>
         </p>
         <p>
-          Email: <strong>{email}</strong>
+          Epost: <strong>{email}</strong>
         </p>
         <p>
-          Total:{' '}
+          Totalt:{' '}
           <strong>
             <CurrencyValue value={order.total.net} />
           </strong>

@@ -20,18 +20,18 @@ function Checkout() {
   const { currency } = settings;
 
   if (!items.length) {
-    return <Outer center>Basket is empty</Outer>;
+    return <Outer center>Hurtigkurven er visty tom...</Outer>;
   }
 
   return (
     <Outer>
       <Inner>
         <Container>
-          <SectionHeader>Checkout</SectionHeader>
+          <SectionHeader>Hurtigkasse</SectionHeader>
           <Payment items={items} currency={currency} />
         </Container>
         <Container>
-          <SectionHeader>Basket</SectionHeader>
+          <SectionHeader>Hurtigkurv</SectionHeader>
           <OrderItems items={items} currency={currency} />
         </Container>
       </Inner>
