@@ -46,7 +46,7 @@ function Checkout() {
               <span>Frakt:</span>
               {freeShipping ? (
                 <span>
-                  {shipping && shipping.unit_price > 99 && (
+                  {shipping && shipping.unit_price > 0 && (
                     <StrikeThrough>
                       <CurrencyValue value={shipping.unit_price} />
                     </StrikeThrough>
@@ -66,7 +66,7 @@ function Checkout() {
               <span>
                 <strong>
                   <H3>
-                    <CurrencyValue value={totalToPay + shipping} />
+                    <CurrencyValue value={totalToPay + 99} />
                   </H3>
                 </strong>
               </span>
