@@ -15,8 +15,7 @@ export default async function sendOrderConfirmation(orderId) {
       operationName: 'getOrder'
     });
     const order = response.orders.get;
-    const { email } = order.customer.addresses[0];
-
+    const { email } = order.customer.addresses?.[0] || {};
     if (!email) {
       // Ideally an email address will always be provided, but if not...
       return;
@@ -39,7 +38,7 @@ export default async function sendOrderConfirmation(orderId) {
                 Epost: <strong>${email}</strong>
                </p>
               <p>
-                Total: <strong>${formatCurrency({
+                Totalt: <strong>${formatCurrency({
                   amount: order.total.net,
                   currency: order.total.currency
                 })}</strong>
@@ -47,9 +46,9 @@ export default async function sendOrderConfirmation(orderId) {
             </mj-text>
             <mj-table>
               <tr style="border-bottom:1px solid #ecedee;text-align:left;">
-                <th style="padding: 0 15px 0 0;">Name</th>
-                <th style="padding: 0 15px;">Quantity</th>
-                <th style="padding: 0 0 0 15px;">Total</th>
+                <th style="padding: 0 15px 0 0;">Navn</th>
+                <th style="padding: 0 15px;">Antall</th>
+                <th style="padding: 0 0 0 15px;">Totalt</th>
               </tr>
               ${order.cart.map(
                 (item) => `<tr>

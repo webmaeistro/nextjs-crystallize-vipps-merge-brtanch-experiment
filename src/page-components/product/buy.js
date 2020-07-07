@@ -36,7 +36,7 @@ export default function BuyButton({ product, selectedVariant }) {
         </strong>
       </Price>
       <Button width="200px" onClick={buy}>
-        Add to Basket
+        Legg til hurtigkurv
       </Button>
     </ProductFooter>
   );

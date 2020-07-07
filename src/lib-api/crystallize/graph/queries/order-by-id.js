@@ -37,7 +37,7 @@ export default `
           addresses {
             type
             email
-            street1
+            street
             postalCode
             city
           }
