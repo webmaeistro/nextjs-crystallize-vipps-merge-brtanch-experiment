@@ -6,17 +6,11 @@ import styled from 'styled-components';
 
 import appConfig, { useLocale } from 'lib/app-config';
 
-// {{#if payment-provider-stripe}}
 import StripeCheckout from './stripe';
-// {{/if}}
 
-// {{#if payment-provider-klarna}}
 import KlarnaCheckout from './klarna';
-// {{/if}}
 
-// {{#if payment-provider-vipps}}
 import VippsCheckout from './vipps';
-// {{/if}}
 
 import {
   Form,
@@ -64,7 +58,6 @@ export default function Payment({ items, currency }) {
   };
 
   const paymentProviders = [
-    // {{#if payment-provider-stripe}}
     {
       name: 'stripe',
       color: '#6773E6',
@@ -96,8 +89,6 @@ export default function Payment({ items, currency }) {
         </PaymentProvider>
       )
     },
-    // {{/if}}
-    // {{#if payment-provider-klarna}}
     {
       name: 'klarna',
       color: '#F8AEC2',
@@ -112,8 +103,6 @@ export default function Payment({ items, currency }) {
         </PaymentProvider>
       )
     },
-    // {{/if}}
-    // {{#if payment-provider-vipps}}
     {
       name: 'vipps',
       color: '#fff',
@@ -131,7 +120,6 @@ export default function Payment({ items, currency }) {
         </PaymentProvider>
       )
     }
-    // {{/if}}
   ];
 
   return (

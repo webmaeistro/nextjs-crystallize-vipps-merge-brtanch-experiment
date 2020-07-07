@@ -48,7 +48,7 @@ export default function Aside() {
 
   return (
     <Basket>
-      <Header>Basket</Header>
+      <Header>Hurtigkurv</Header>
       <TinyBasket />
       <Footer>
         <Link href="/checkout" passHref>
@@ -58,7 +58,7 @@ export default function Aside() {
             disabled={!basket.state.items.length}
             onClick={onCheckoutClick}
           >
-            Go to Checkout
+            Gå til Vipps Hurtigkasse
           </CheckoutBtn>
         </Link>
       </Footer>

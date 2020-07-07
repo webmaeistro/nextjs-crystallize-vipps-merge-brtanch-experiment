@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { useAuth } from 'components/auth-context';
+//import { useAuth } from 'components/auth-context';
 import { useSettings } from 'components/settings-context';
 import Link from 'components/link';
 
@@ -8,12 +8,12 @@ import LogoShop from 'ui/icons/logo-shop';
 
 import BurgerButton from './burger-button';
 import BasketButton from './basket-button';
-import LocaleSwitcher from './locale-switcher';
-import { Outer, Nav, Logo, NavActions, NavList, NavListItem } from './styles';
-
+//import LocaleSwitcher from './locale-switcher';
+import { Outer, Nav, Logo, NavList, NavListItem } from './styles';
+// ^NavActions
 export default function Header({ simple }) {
   const { mainNavigation } = useSettings();
-  const auth = useAuth();
+  // const auth = useAuth();
 
   const [navOpen, setNavOpen] = useState(false);
 
@@ -37,7 +37,7 @@ export default function Header({ simple }) {
           ))}
         </NavList>
       </Nav>
-      <NavActions open={navOpen}>
+      {/*     <NavActions open={navOpen}>
         <LocaleSwitcher />
         {auth.isLoggedIn ? (
           <button type="button" onClick={auth.logout}>
@@ -49,6 +49,7 @@ export default function Header({ simple }) {
           </Link>
         )}
       </NavActions>
+        */}
       <BasketButton />
       <BurgerButton active={navOpen} onClick={() => setNavOpen(!navOpen)} />
     </Outer>
