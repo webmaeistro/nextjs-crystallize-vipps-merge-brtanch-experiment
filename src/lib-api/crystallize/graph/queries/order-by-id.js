@@ -34,12 +34,9 @@ export default `
         customer {
           firstName
           lastName
-          email
           addresses {
             type
-            street
-            postalCode
-            city
+            email
           }
         }
       }
