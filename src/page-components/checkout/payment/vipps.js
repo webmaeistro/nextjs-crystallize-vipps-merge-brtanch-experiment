@@ -8,12 +8,12 @@ export default function VippsWrapper({
   currency,
   onSuccess
 }) {
-  const [state, setState] = useState('laster');
+  const [state, setState] = useState('loading');
   const locale = useLocale();
 
   useEffect(() => {
     async function load() {
-      setState('laster..');
+      setState('loading');
 
       const lineItems = items.map((item) => ({
         name: item.name,
@@ -50,10 +50,10 @@ export default function VippsWrapper({
 
     load();
   }, [locale, items, personalDetails, currency, onSuccess]);
-
+  //                  ^
   if (state === 'error') {
     return <p>Oh no. Unable to initialise Vipps</p>;
   }
 
-  return <p>Hold on...</p>;
+  return <p>Kontakter Vipps, øyeblikk bare...</p>;
 }

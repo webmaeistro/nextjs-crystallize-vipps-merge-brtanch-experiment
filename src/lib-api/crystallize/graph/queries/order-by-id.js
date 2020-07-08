@@ -34,9 +34,9 @@ export default `
         customer {
           firstName
           lastName
+          email
           addresses {
             type
-            email
             street
             postalCode
             city

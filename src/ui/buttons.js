@@ -5,13 +5,13 @@ import { isNot } from 'styled-is';
 import { Spinner } from './spinner';
 
 const STATES = {
-  LOADING: 'loading',
+  LOADING: 'loading'
 };
 
 const Inner = styled.span`
   flex: 1 1 auto;
-  background: var(--color-box-background);
-  color: var(--color-text-main);
+  background: var(--color-vipps-orange);
+  color: var(--color-vipps-white);
   font-weight: 600;
   text-decoration: none;
   text-align: center;
@@ -20,7 +20,7 @@ const Inner = styled.span`
 `;
 
 const Outer = styled.button.attrs((p) => ({
-  type: p.type || 'button',
+  type: p.type || 'button'
 }))`
   min-width: ${(p) => (p.width ? p.width : '120px')};
   display: inline-flex;
@@ -33,16 +33,16 @@ const Outer = styled.button.attrs((p) => ({
   text-decoration: none;
 
   &:hover ${Inner} {
-    background: var(--color-text-main);
-    color: var(--color-main-background);
+    background: var(--color-vipps-purple);
+    color: var(--color-vipps-orange);
   }
 
   &[disabled] {
     cursor: default;
 
     ${Inner} {
-      background: #aaa;
-      color: #333;
+      background: var(--color-vipps-orange);
+      color: #ffffff;
     }
   }
 `;

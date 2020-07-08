@@ -18,7 +18,7 @@ const CheckoutBtn = styled(Button)`
   text-align: center;
 
   &:not([disabled]):hover {
-    background: var(--color-text-main);
+    background: var(--color-vipps-orange);
     color: var(--color-main-background);
     text-decoration: none;
   }

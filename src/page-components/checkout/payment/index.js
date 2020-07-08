@@ -14,9 +14,11 @@ import VippsCheckout from './vipps';
 
 import {
   Form,
+  /*
   Input,
   InputGroup,
   Label,
+  */
   PaymentSelector,
   PaymentProviders,
   PaymentButton,
@@ -43,7 +45,7 @@ export default function Payment({ items, currency }) {
   const locale = useLocale();
   const router = useRouter();
   const [paymentProvider, setPaymentProvider] = useState(null);
-  const [state, setState] = useState({
+  const [state] = useState({
     firstName: '',
     lastName: '',
     email: ''
@@ -106,7 +108,7 @@ export default function Payment({ items, currency }) {
     {
       name: 'vipps',
       color: '#fff',
-      logo: '/static/vipps-logo.png',
+      logo: '/static/vipps_hurtigkasse_rect_210_NO@2x.png',
       render: () => (
         <PaymentProvider>
           <VippsCheckout
@@ -126,15 +128,16 @@ export default function Payment({ items, currency }) {
     <Inner>
       <Form noValidate>
         <Row>
+          {/*
           <InputGroup>
             <Label htmlFor="firstname">First Name</Label>
             <Input
               name="firstname"
               type="text"
               placeholder="First name"
-              value={firstName}
+            //  value={firstName}
               onChange={(e) =>
-                setState({ ...state, firstName: e.target.value })
+            //    setState({ ...state, firstName: e.target.value })
               }
               required
             />
@@ -145,8 +148,8 @@ export default function Payment({ items, currency }) {
               name="lastname"
               type="text"
               placeholder="Last name"
-              value={lastName}
-              onChange={(e) => setState({ ...state, lastName: e.target.value })}
+           //   value={lastName}
+            //  onChange={(e) => setState({ ...state, lastName: e.target.value })}
               required
             />
           </InputGroup>
@@ -158,16 +161,17 @@ export default function Payment({ items, currency }) {
               name="email"
               type="email"
               placeholder="Email address"
-              value={email}
-              onChange={(e) => setState({ ...state, email: e.target.value })}
+          //    value={email}
+         //     onChange={(e) => setState({ ...state, email: e.target.value })}
               required
             />
           </InputGroup>
+         */}
         </Row>
 
-        <SectionHeader>Choose payment method</SectionHeader>
+        <SectionHeader>Velg betalings måte</SectionHeader>
         {appConfig.paymentProviders.length === 0 ? (
-          <i>No payment providers have been configured</i>
+          <i>Ingen betalings måter er ennå konfigurert</i>
         ) : (
           <PaymentProviders>
             <PaymentSelector>
@@ -178,8 +182,8 @@ export default function Payment({ items, currency }) {
                 if (!paymentProvider) {
                   return (
                     <small>
-                      Payment method {paymentProviderFromConfig} is not
-                      configured
+                      Betalingsmetoden {paymentProviderFromConfig} er ikke
+                      konfigurert
                     </small>
                   );
                 }

@@ -11,6 +11,13 @@ export default createGlobalStyle`
 
     --color-price: #d79b59;
     --color-error: #EF4836;
+
+    --color-vipps-orange: #FF5B24;
+    --color-vipps-purple: #49367E;
+    --color-vipps-white: #FFF4EC;
+    --color-vipps-blue:  #59CBE8;
+    --color-vipps-signalpurple: #5E3DC2;
+    --color-vipps-rust: #9B3716;
   }
 
   /* Uncomment this to enable dark mode */
@@ -30,7 +37,7 @@ export default createGlobalStyle`
 
   body {
     margin: 0;
-    font: 16px/1 roboto, sans-serif;
+    font: 16px/1 Vipps Text, sans-serif;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
     background: var(--color-main-background);
