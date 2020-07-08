@@ -46,8 +46,6 @@ export default function VippsOrderNormalizer({ vippsOrderId, vippsData }) {
         addresses: [
           {
             type: 'delivery',
-            firstName: userDetails.firstName,
-            lastName: userDetails.lastName,
             street: shippingDetails.address.addressLine1,
             street2: shippingDetails.address.addressLine2,
             postalCode: shippingDetails.address.postCode,
