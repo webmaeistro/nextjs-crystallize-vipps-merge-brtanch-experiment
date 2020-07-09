@@ -36,14 +36,14 @@ export default async (req, res) => {
           lastName,
           email,
           mobileNumber: phone
-        } = {},
+        },
         shippingDetails: {
           addressLine1: street,
           addressLine2: street2,
           postCode: postalCode,
           city,
           country
-        } = {}
+        }
       } = order;
 
       await updateCrystallizeOrder({

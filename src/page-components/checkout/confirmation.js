@@ -34,6 +34,8 @@ export default function Confirmation({ order: orderData }) {
   }, [emptied, basket.actions]);
 
   const order = orderData.data.orders.get;
+  const email = order.customer.addresses[email];
+
   const items = order.cart.map((item) => ({
     ...item,
     image: {
@@ -41,7 +43,6 @@ export default function Confirmation({ order: orderData }) {
     },
     price: item.price.net
   }));
-  const email = order.customer.addresses?.[0]?.email;
 
   return (
     <Layout title={t('checkout.confirmation.title')}>

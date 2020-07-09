@@ -3,10 +3,11 @@
   "locales": [
     {
       "isDefault": true,
-      "displayName": "Norwegian - NO",
-      "urlPrefix": "",
-      "appLanguage": "nb-NO",
-      "crystallizeCatalogueLanguage": "en"
+      "displayName": "English - US",
+      "urlPrefix": "en",
+      "appLanguage": "en-US",
+      "crystallizeCatalogueLanguage": "en",
+      "defaultCurrency": "USD"
     }
   ]
 }

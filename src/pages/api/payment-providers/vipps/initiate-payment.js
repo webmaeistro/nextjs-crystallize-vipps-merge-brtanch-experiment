@@ -36,7 +36,7 @@ function orderToVippsBody({ basket, orderId, host, multilingualUrlPrefix }) {
     transaction: {
       orderId,
       amount: totalCartAmount,
-      transactionText: 'Ørn forlag netthandel transaksjon fra ornforlag.no'
+      transactionText: 'ornforlag.no, netthandel transaksjon.'
     }
   };
 }
@@ -47,12 +47,13 @@ export default async (req, res) => {
       personalDetails,
       lineItems,
       currency,
-      multilingualUrlPrefix
+      multilingualUrlPrefix,
+      customerInfo
     } = req.body;
     const host = getHost(req);
 
     const validCrystallizeOrder = orderNormalizer({
-      vippsData: { lineItems, currency, personalDetails }
+      vippsData: { lineItems, currency, personalDetails, customerInfo }
     });
 
     const createCrystallizeOrderResponse = await createCrystallizeOrder(
