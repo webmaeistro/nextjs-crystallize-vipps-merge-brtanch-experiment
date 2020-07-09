@@ -43,7 +43,7 @@ export default class MyDocument extends Document {
           />
           <meta name="apple-mobile-web-app-capable" content="yes" />
           <link
-            href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&family=Roboto:wght@300;400;700&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Vippstext+Slab:wght@700&family=Vippstekst:wght@300;400;700&display=swap"
             rel="stylesheet"
           />
           <link

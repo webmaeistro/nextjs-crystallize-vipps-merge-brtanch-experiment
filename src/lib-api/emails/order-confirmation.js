@@ -15,7 +15,7 @@ export default async function sendOrderConfirmation(orderId) {
       operationName: 'getOrder'
     });
     const order = response.orders.get;
-    const { email } = order.customer.addresses?.[0] || {};
+    const { email } = order.customer.addresses[email];
     if (!email) {
       // Ideally an email address will always be provided, but if not...
       return;

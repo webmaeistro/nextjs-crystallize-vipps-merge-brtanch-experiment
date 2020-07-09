@@ -11,16 +11,16 @@ export const createCrystallizeOrder = (variables) =>
     operationName: 'createOrder'
   });
 
-export const fetchCrystallizeOrder = (orderId) =>
-  callOrdersApi({
-    query: orderQuery,
-    variables: { id: orderId },
-    operationName: 'getOrder'
-  });
-
 export const updateCrystallizeOrder = (variables) =>
   callCoreApi({
     query: updateMutation,
     variables,
     operationName: 'updateOrder'
+  });
+
+export const fetchCrystallizeOrder = (orderId) =>
+  callOrdersApi({
+    query: orderQuery,
+    variables: { id: orderId },
+    operationName: 'getOrder'
   });

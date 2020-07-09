@@ -9,15 +9,8 @@ export default `
           currency
         }
         payment {
-          ... on StripePayment {
+          ... on VippsPayment {
             paymentMethod
-          }
-          ... on CustomPayment {
-            provider
-            properties {
-              property
-              value
-            }
           }
         }
         cart {
