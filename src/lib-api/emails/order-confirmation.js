@@ -75,7 +75,7 @@ export default async function sendOrderConfirmation(orderId) {
       await sgMail.send({
         to: email,
         from: 'webmaster@ornforlag.no',
-        subject: 'Ordre kvitering fra Ørn forlag',
+        subject: 'Ordre kvitering fra ornforlag.no',
         html
       });
     }
