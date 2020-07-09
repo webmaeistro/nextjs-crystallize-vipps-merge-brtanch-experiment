@@ -3,9 +3,9 @@ import { updateCrystallizeOrder } from 'lib-api/crystallize/order';
 
 export default async (req, res) => {
   try {
-    const { orderId, multilingualUrlPrefix } = req.query;
+    const { orderId } = req.query;
 
-    let redirectTo = `${multilingualUrlPrefix}/checkout`;
+    let redirectTo = `/checkout`;
 
     // Retrieve the Vipps order to get transaction details
     const order = await getClient().getOrderDetails({ orderId });
@@ -23,7 +23,7 @@ export default async (req, res) => {
       lastTransactionLogEntry.operation === 'RESERVE' &&
       lastTransactionLogEntry.operationSuccess
     ) {
-      redirectTo = `${multilingualUrlPrefix}/confirmation/vipps/${orderId}`;
+      redirectTo = `/confirmation/vipps/${orderId}`;
 
       /**
        * At this point we have user details from Vipps, which

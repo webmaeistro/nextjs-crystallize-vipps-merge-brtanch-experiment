@@ -8,7 +8,7 @@ export const getStaticPaths = !isMultilingual
   ? undefined
   : () => {
       return {
-        paths: appConfig.locales.map((l) => `/${l.urlPrefix}/checkout`),
+        paths: appConfig.locales.map(() => `/checkout`),
         fallback: false
       };
     };
